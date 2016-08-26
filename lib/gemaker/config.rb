@@ -1,22 +1,27 @@
 module Gemaker
   class Config
     attr_accessor :gem_name, :summary, :homepage, :gem_type
-    attr_reader :description, :authors, :emails
+    attr_reader :human_gem_name, :authors, :emails
+    attr_writer :human_gem_name, :description
 
     def initialize
       self.gem_type = :normal
     end
 
-    def description=(value)
-      @description = value.blank? ? summary : value
+    def human_gem_name
+      @human_gem_name || gem_name.titleize
+    end
+
+    def description
+      @description || summary
     end
 
     def authors=(value)
-      @authors = string_to_array(value)
+      @authors = ["Platanus"] + string_to_array(value)
     end
 
     def emails=(value)
-      @emails = string_to_array(value)
+      @emails = ["rubygems@platan.us"] + string_to_array(value)
     end
 
     private
