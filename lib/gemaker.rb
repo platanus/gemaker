@@ -7,6 +7,7 @@ require "gemaker/validator"
 require "gemaker/commands/base"
 require "gemaker/commands/create_gem"
 require "gemaker/commands/add_readme"
+require "gemaker/commands/add_changelog"
 
 module Gemaker
 end

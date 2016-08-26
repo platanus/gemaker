@@ -22,6 +22,7 @@ module Gemaker
           fill_config(args.first, config, validator)
           Gemaker::Cmd::CreateGem.for(config: config)
           Gemaker::Cmd::AddReadme.for(config: config)
+          Gemaker::Cmd::AddChangelog.for(config: config)
         end
       end
     end
