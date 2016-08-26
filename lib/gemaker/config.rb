@@ -24,6 +24,10 @@ module Gemaker
       @emails = ["rubygems@platan.us"] + string_to_array(value)
     end
 
+    def engine?
+      gem_type == :engine
+    end
+
     private
 
     def string_to_array(value)
