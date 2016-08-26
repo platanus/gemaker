@@ -1,5 +1,6 @@
+require "active_support/all"
 require "gemaker/version"
+require "gemaker/config"
 
 module Gemaker
-  # Your code goes here...
 end
