@@ -20,7 +20,7 @@ module Gemaker
         c.description = "Create a new gem with Platanus configuration"
         c.action do |args|
           fill_config(args.first, config, validator)
-          p config
+          Gemaker::Cmd::CreateGem.for(config: config)
         end
       end
     end
