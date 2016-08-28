@@ -9,6 +9,7 @@ require "gemaker/commands/create_gem"
 require "gemaker/commands/add_readme"
 require "gemaker/commands/add_changelog"
 require "gemaker/commands/customize_gemspec"
+require "gemaker/commands/add_license"
 
 module Gemaker
 end
