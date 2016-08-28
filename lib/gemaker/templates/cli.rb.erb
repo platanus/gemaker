@@ -1,0 +1,19 @@
+module <%= config.gem_class %>
+  class Cli
+    include Commander::Methods
+
+    def run
+      program :name, "<%= config.human_gem_name %>"
+      program :version, <%= config.gem_class %>::VERSION
+      program :description, "<%= config.description.blank? ? "TODO: add description" : config.description %>"
+
+      command("hello") do |c|
+        c.syntax = "<%= config.gem_name %> hello"
+        c.description = "Just a command example"
+        c.action { puts "Hello Platanus!" }
+      end
+
+      run!
+    end
+  end
+end

@@ -1,11 +1,11 @@
 module Gemaker
   class Config
-    attr_accessor :gem_name, :summary, :gem_type
+    attr_accessor :gem_name, :summary, :engine, :cli
     attr_reader :authors, :emails
     attr_writer :human_gem_name, :description, :homepage
 
     def initialize
-      self.gem_type = :normal
+      self.engine = :normal
     end
 
     def human_gem_name
@@ -36,7 +36,11 @@ module Gemaker
     end
 
     def engine?
-      gem_type == :engine
+      !!engine
+    end
+
+    def cli?
+      !!cli
     end
 
     private
