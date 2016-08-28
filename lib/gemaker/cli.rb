@@ -25,7 +25,7 @@ module Gemaker
           Gemaker::Cmd::CustomizeGemspec.for(config: config)
           Gemaker::Cmd::AddLicense.for(config: config)
           Gemaker::Cmd::AddCliStructure.for(config: config)
-          Gemaker::Cmd::ConfigureRspec.for(config: config)
+          Gemaker::Cmd::ConfigureTestEnv.for(config: config)
           Gemaker::Cmd::ExecuteGitInit.for(config: config)
         end
       end

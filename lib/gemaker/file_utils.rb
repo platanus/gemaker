@@ -5,7 +5,7 @@ module Gemaker
     end
 
     def copy_template(source, destination, locales = {})
-      template_path = get_template_path(source)
+      template_path = get_template_path(source) + ".erb"
       destination_path = get_destination_path(destination)
 
       input = File.open(template_path)
@@ -36,7 +36,7 @@ module Gemaker
     end
 
     def get_template_path(file_path)
-      File.join(utils_path, "templates", file_path + ".erb")
+      File.join(utils_path, "templates", file_path)
     end
 
     def gem_root_path

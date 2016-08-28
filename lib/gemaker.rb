@@ -11,7 +11,7 @@ require "gemaker/commands/customize_gemspec"
 require "gemaker/commands/add_license"
 require "gemaker/commands/add_cli_structure"
 require "gemaker/commands/execute_git_init"
-require "gemaker/commands/configure_rspec"
+require "gemaker/commands/configure_test_env"
 
 module Gemaker
 end
