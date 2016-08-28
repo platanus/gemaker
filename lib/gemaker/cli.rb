@@ -23,6 +23,7 @@ module Gemaker
           Gemaker::Cmd::CreateGem.for(config: config)
           Gemaker::Cmd::AddReadme.for(config: config)
           Gemaker::Cmd::AddChangelog.for(config: config)
+          Gemaker::Cmd::CustomizeGemspec.for(config: config)
         end
       end
     end

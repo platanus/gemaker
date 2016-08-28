@@ -1,6 +1,6 @@
 # <%= config.human_gem_name %>
 
-<%= config.description || "TODO" %>
+<%= config.description.blank? ? "TODO" : config.description %>
 
 ## Installation
 

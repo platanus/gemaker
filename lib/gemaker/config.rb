@@ -1,19 +1,30 @@
 module Gemaker
   class Config
-    attr_accessor :gem_name, :summary, :homepage, :gem_type
-    attr_reader :human_gem_name, :authors, :emails
-    attr_writer :human_gem_name, :description
+    attr_accessor :gem_name, :summary, :gem_type
+    attr_reader :authors, :emails
+    attr_writer :human_gem_name, :description, :homepage
 
     def initialize
       self.gem_type = :normal
     end
 
     def human_gem_name
-      @human_gem_name || gem_name.titleize
+      return gem_name.titleize if @human_gem_name.blank?
+      @human_gem_name
+    end
+
+    def gem_class
+      gem_name.classify
     end
 
     def description
-      @description || summary
+      return summary if @description.blank?
+      @description
+    end
+
+    def homepage
+      return "https://github.com/platanus/#{gem_name}/master" if @homepage.blank?
+      @homepage
     end
 
     def authors=(value)
