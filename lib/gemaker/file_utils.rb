@@ -23,6 +23,10 @@ module Gemaker
       `cd #{gem_root_path}; #{cmd}; cd ..`
     end
 
+    def create_dir(path)
+      ::FileUtils.mkdir_p(get_destination_path(path))
+    end
+
     private
 
     def get_destination_path(destination)
