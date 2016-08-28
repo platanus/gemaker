@@ -15,6 +15,14 @@ module Gemaker
       input.close
     end
 
+    def rm_rf(path)
+      ::FileUtils.rm_rf(File.join(gem_root_path, path))
+    end
+
+    def execute(cmd)
+      `cd #{gem_root_path}; #{cmd}; cd ..`
+    end
+
     private
 
     def get_destination_path(destination)
