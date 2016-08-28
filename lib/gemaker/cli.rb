@@ -26,6 +26,7 @@ module Gemaker
           Gemaker::Cmd::AddLicense.for(config: config)
           Gemaker::Cmd::AddCliStructure.for(config: config)
           Gemaker::Cmd::ConfigureTestEnv.for(config: config)
+          Gemaker::Cmd::AddRubyVersion.for(config: config)
           Gemaker::Cmd::ExecuteGitInit.for(config: config)
         end
       end

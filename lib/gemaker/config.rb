@@ -1,5 +1,7 @@
 module Gemaker
   class Config
+    RUBY_VERSION = 2.3
+
     attr_accessor :gem_name, :summary, :engine, :cli
     attr_reader :authors, :emails
     attr_writer :human_gem_name, :description, :homepage
@@ -41,6 +43,10 @@ module Gemaker
 
     def cli?
       !!cli
+    end
+
+    def ruby_version
+      RUBY_VERSION
     end
 
     private
