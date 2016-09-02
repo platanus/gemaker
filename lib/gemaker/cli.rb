@@ -38,9 +38,11 @@ module Gemaker
       config.homepage = ask("Enter gem's homepage: ")
       config.authors = ask("Enter gem's authors: ")
       config.emails = ask("Enter the authors' emails: ")
-      config.engine = agree("It's a Rails Engine?")
+      config.engine = agree("Is it a Rails Engine?")
 
-      if !config.engine?
+      if config.engine?
+        config.mountable = agree("Create as mountable?")
+      else
         config.cli = agree("It's a CLI?")
       end
     end
