@@ -1,6 +1,6 @@
 module Gemaker
   module Cmd
-    class ExecuteGitInit < Gemaker::Cmd::Base
+    class ConfigureGit < Gemaker::Cmd::Base
       def perform
         rm_rf(".git")
         execute("git init")
