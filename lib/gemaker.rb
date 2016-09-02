@@ -13,6 +13,7 @@ require "gemaker/commands/add_cli_structure"
 require "gemaker/commands/configure_git"
 require "gemaker/commands/configure_test_env"
 require "gemaker/commands/add_ruby_version"
+require "gemaker/commands/customize_engine"
 
 module Gemaker
 end
