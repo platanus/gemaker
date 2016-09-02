@@ -5,8 +5,8 @@ require "<%= config.gem_name %>/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "<%= config.gem_name %>"
-  s.version     = <%= config.gem_class %>::VERSION
+  s.name          = "<%= config.gem_name %>"
+  s.version       = <%= config.gem_class %>::VERSION
   s.authors       = <%= config.authors.to_s %>
   s.email         = <%= config.emails.to_s %>
   s.homepage      = "<%= config.homepage %>"
@@ -23,5 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "~> 3.4.0"
+  s.add_development_dependency "guard-rspec", "~> 4.7"
   s.add_development_dependency "factory_girl_rails", "~> 4.6.0"
 end
