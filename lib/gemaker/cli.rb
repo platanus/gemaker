@@ -39,7 +39,10 @@ module Gemaker
       config.authors = ask("Enter gem's authors: ")
       config.emails = ask("Enter the authors' emails: ")
       config.engine = agree("It's a Rails Engine?")
-      config.cli = agree("It's a CLI?")
+
+      if !config.engine?
+        config.cli = agree("It's a CLI?")
+      end
     end
   end
 end
