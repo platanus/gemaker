@@ -20,14 +20,6 @@ module Gemaker
         c.action do |args|
           fill_config(args.first, config)
           Gemaker::Cmd::CreateGem.for(config: config)
-          Gemaker::Cmd::AddReadme.for(config: config)
-          Gemaker::Cmd::AddChangelog.for(config: config)
-          Gemaker::Cmd::CustomizeGemspec.for(config: config)
-          Gemaker::Cmd::AddLicense.for(config: config)
-          Gemaker::Cmd::AddCliStructure.for(config: config)
-          Gemaker::Cmd::ConfigureTestEnv.for(config: config)
-          Gemaker::Cmd::AddRubyVersion.for(config: config)
-          Gemaker::Cmd::ExecuteGitInit.for(config: config)
         end
       end
     end
