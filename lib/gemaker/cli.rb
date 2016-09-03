@@ -18,6 +18,7 @@ module Gemaker
         c.syntax = "gemaker new"
         c.description = "Create a new gem with Platanus configuration"
         c.action do |args|
+          draw_artii("Platanus")
           fill_config(args.first, config)
           Gemaker::Cmd::CreateGem.for(config: config)
         end
@@ -43,8 +44,13 @@ module Gemaker
       if config.engine?
         config.mountable = agree("Create as mountable?")
       else
-        config.cli = agree("It's a CLI?")
+        config.cli = agree("Is it a CLI?")
       end
+    end
+
+    def draw_artii(text)
+      a = Artii::Base.new font: 'slant'
+      puts ColorizedString.new(a.asciify(text)).yellow
     end
   end
 end
