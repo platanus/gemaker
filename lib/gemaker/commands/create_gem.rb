@@ -24,6 +24,7 @@ module Gemaker
         Gemaker::Cmd::AddRubyVersion.for(config: @config)
         Gemaker::Cmd::CustomizeEngine.for(config: @config)
         Gemaker::Cmd::CustomizeRakefile.for(config: @config)
+        Gemaker::Cmd::CustomizeMainLibFile.for(config: @config)
         Gemaker::Cmd::ConfigureGit.for(config: @config)
       end
     end
