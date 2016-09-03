@@ -6,7 +6,7 @@ module Gemaker
         copy_file("test_helpers.rb", "spec/support/test_helpers.rb")
         copy_template("normal/test_example.rb", "spec/#{@config.gem_name}_spec.rb", config: @config)
         copy_file("normal/Guardfile", "Guardfile")
-        puts "Configure Rspec"
+        info "Configure Rspec"
       end
 
       def in_engine_context
@@ -20,7 +20,7 @@ module Gemaker
         copy_file("video.mp4", "spec/dummy/spec/assets/video.mp4")
         copy_file("engine/rspec", ".rspec")
         copy_file("engine/Guardfile", "Guardfile")
-        puts "Configure Rspec"
+        info "Configure Rspec"
       end
     end
   end

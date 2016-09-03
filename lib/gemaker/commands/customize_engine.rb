@@ -3,7 +3,7 @@ module Gemaker
     class CustomizeEngine < Gemaker::Cmd::Base
       def in_engine_context
         copy_template("engine/engine.rb", "lib/#{@config.gem_name}/engine.rb", config: @config)
-        puts "Customize engine.rb"
+        info "Customize engine.rb"
       end
     end
   end

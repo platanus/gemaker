@@ -2,11 +2,11 @@ module Gemaker
   module Cmd
     class ConfigureGit < Gemaker::Cmd::Base
       def perform
-        execute("bundle install")
+        execute_in_gem("bundle install")
         rm_rf(".git")
-        execute("git init")
-        execute("git add .")
-        execute("git commit -m 'Initial commit'")
+        execute_in_gem("git init")
+        execute_in_gem("git add .")
+        execute_in_gem("git commit -m 'Initial commit'")
       end
     end
   end

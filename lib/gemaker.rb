@@ -1,7 +1,9 @@
 require "power-types"
 require "active_support/all"
+require "colorized_string"
+
 require "gemaker/version"
-require "gemaker/file_utils"
+require "gemaker/util"
 require "gemaker/config"
 require "gemaker/commands/base"
 require "gemaker/commands/create_gem"

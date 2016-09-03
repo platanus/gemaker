@@ -14,7 +14,7 @@ module Gemaker
       private
 
       def create_customized_gem(cmd)
-        printf `#{cmd}`
+        execute(cmd)
         Gemaker::Cmd::AddReadme.for(config: @config)
         Gemaker::Cmd::AddChangelog.for(config: @config)
         Gemaker::Cmd::CustomizeGemspec.for(config: @config)
@@ -27,6 +27,7 @@ module Gemaker
         Gemaker::Cmd::CustomizeMainLibFile.for(config: @config)
         Gemaker::Cmd::AddInstallGenerator.for(config: @config)
         Gemaker::Cmd::ConfigureGit.for(config: @config)
+        info("Done!")
       end
     end
   end

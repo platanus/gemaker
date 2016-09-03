@@ -13,7 +13,7 @@ module Gemaker
 
       def customize_rakefile(from)
         copy_file("#{from}/Rakefile", "Rakefile")
-        puts "Customize Rakefile"
+        info "Customize Rakefile"
       end
     end
   end

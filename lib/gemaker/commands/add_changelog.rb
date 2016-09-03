@@ -3,7 +3,7 @@ module Gemaker
     class AddChangelog < Gemaker::Cmd::Base
       def perform
         copy_file("CHANGELOG.md", "CHANGELOG.md")
-        puts "Create CHANGELOG.md"
+        info "Create CHANGELOG.md"
       end
     end
   end

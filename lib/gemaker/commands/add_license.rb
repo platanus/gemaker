@@ -4,7 +4,7 @@ module Gemaker
       def perform
         copy_template("LICENSE.txt", "LICENSE.txt")
         rm_rf("MIT-LICENSE")
-        puts "Add LICENSE.txt"
+        info "Add LICENSE.txt"
       end
     end
   end

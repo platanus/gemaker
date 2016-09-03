@@ -13,7 +13,7 @@ module Gemaker
 
       def copy_gempsec(template)
         copy_template(template, "#{@config.gem_name}.gemspec", config: @config)
-        puts "Customize #{@config.gem_name}.gemspec"
+        info "Customize #{@config.gem_name}.gemspec"
       end
     end
   end

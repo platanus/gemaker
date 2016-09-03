@@ -1,5 +1,5 @@
 module Gemaker
-  module FileUtils
+  module Util
     def copy_file(source, destination)
       ::FileUtils.cp(get_template_path(source), get_destination_path(destination))
     end
@@ -20,7 +20,11 @@ module Gemaker
     end
 
     def execute(cmd)
-      printf `cd #{gem_root_path}; #{cmd}; cd ..`
+      `#{cmd}`
+    end
+
+    def execute_in_gem(cmd)
+      `cd #{gem_root_path}; #{cmd}; cd ..`
     end
 
     def create_dir(path)
@@ -51,6 +55,10 @@ module Gemaker
       b = binding
       data.each { |k, v| singleton_class.send(:define_method, k) { v } }
       ERB.new(content, nil, "-").result(b)
+    end
+
+    def info(string)
+      puts ColorizedString.new(string).green
     end
   end
 end
