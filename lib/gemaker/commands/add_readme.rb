@@ -3,7 +3,7 @@ module Gemaker
     class AddReadme < Gemaker::Cmd::Base
       def perform
         copy_template("README.md", "README.md", config: @config)
-        rm_rf("README.rdoc")
+        remove_in_gem("README.rdoc")
         info "Replace README.md"
       end
     end

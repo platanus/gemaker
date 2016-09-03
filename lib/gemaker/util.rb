@@ -15,8 +15,15 @@ module Gemaker
       input.close
     end
 
-    def rm_rf(path)
-      ::FileUtils.rm_rf(File.join(gem_root_path, path))
+    def remove_in_gem(path)
+      full_path = File.join(gem_root_path, path)
+
+      if File.exist?(full_path)
+        ::FileUtils.rm_rf(File.join(gem_root_path, path))
+        return
+      end
+
+      puts "Can't delete because #{full_path} does not exist"
     end
 
     def execute(cmd)
@@ -30,8 +37,6 @@ module Gemaker
     def create_dir(path)
       ::FileUtils.mkdir_p(get_destination_path(path))
     end
-
-    private
 
     def get_destination_path(destination)
       destination_path = File.join(gem_root_path, destination)

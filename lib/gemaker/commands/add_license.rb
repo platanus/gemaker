@@ -3,7 +3,7 @@ module Gemaker
     class AddLicense < Gemaker::Cmd::Base
       def perform
         copy_template("LICENSE.txt", "LICENSE.txt")
-        rm_rf("MIT-LICENSE")
+        remove_in_gem("MIT-LICENSE")
         info "Add LICENSE.txt"
       end
     end
