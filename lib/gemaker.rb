@@ -14,6 +14,7 @@ require "gemaker/commands/configure_git"
 require "gemaker/commands/configure_test_env"
 require "gemaker/commands/add_ruby_version"
 require "gemaker/commands/customize_engine"
+require "gemaker/commands/customize_rakefile"
 
 module Gemaker
 end
