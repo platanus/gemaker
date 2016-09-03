@@ -25,6 +25,7 @@ module Gemaker
         Gemaker::Cmd::CustomizeEngine.for(config: @config)
         Gemaker::Cmd::CustomizeRakefile.for(config: @config)
         Gemaker::Cmd::CustomizeMainLibFile.for(config: @config)
+        Gemaker::Cmd::AddInstallGenerator.for(config: @config)
         Gemaker::Cmd::ConfigureGit.for(config: @config)
       end
     end
