@@ -20,7 +20,7 @@ module Gemaker
     end
 
     def execute(cmd)
-      `cd #{gem_root_path}; #{cmd}; cd ..`
+      printf `cd #{gem_root_path}; #{cmd}; cd ..`
     end
 
     def create_dir(path)
