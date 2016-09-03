@@ -25,6 +25,7 @@ module Gemaker
       end
     end
 
+    # rubocop:disable Metrics/MethodLength
     def fill_config(gem_name, config)
       config.gem_name = gem_name
 
@@ -33,20 +34,23 @@ module Gemaker
       end
 
       config.human_gem_name = ask(
-        "Enter the human readable version of the name like \"#{config.human_gem_name}\":")
+        "Enter the human readable version of the name. e.g. \"#{config.human_gem_name}\":")
       config.summary = ask("Enter gem's summary: ")
       config.description = ask("Enter gem's description: ")
-      config.homepage = ask("Enter gem's homepage: ")
-      config.authors = ask("Enter gem's authors: ")
-      config.emails = ask("Enter the authors' emails: ")
-      config.engine = agree("Is it a Rails Engine?")
+      config.homepage = ask(
+        "Enter gem's homepage. e.g. https://github.com/platanus/#{config.gem_name}: ")
+      config.authors = ask("Enter gem's authors. e.g. Sherlock Holmes,James Moriarty: ")
+      config.emails = ask(
+        "Enter the authors' emails. e.g. sherlock@platan.us,james@platan.us: ")
+      config.engine = agree("Is the gem a Rails engine?")
 
       if config.engine?
-        config.mountable = agree("Create as mountable?")
+        config.mountable = agree("Is the engine mountable?")
       else
-        config.cli = agree("Is it a CLI?")
+        config.cli = agree("Is it a CLI (Command-line interface)?")
       end
     end
+    # rubocop:enable Metrics/MethodLength
 
     def draw_artii(text)
       a = Artii::Base.new font: 'slant'
