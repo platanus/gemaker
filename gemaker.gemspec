@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ldlsegovia@gmail.com"]
 
   spec.summary       = "Gem to build gems"
-  spec.description   = "Gem to build gems"
+  spec.description   = "Ruby CLI created to build Platanus' gems"
   spec.homepage      = "https://github.com/platanus/gemaker"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
