@@ -2,6 +2,7 @@ module Gemaker
   module Cmd
     class AddInstallGenerator < Gemaker::Cmd::Base
       def in_engine_context
+        return unless @config.installable?
         copy_template("engine/initializer.rb",
           "lib/generators/#{@config.gem_name}/install/templates/initializer.rb", config: @config)
         copy_template("engine/install_generator.rb",
