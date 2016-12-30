@@ -55,7 +55,7 @@ module Gemaker
 
     def draw_artii(text)
       a = Artii::Base.new font: 'slant'
-      puts ColorizedString.new(a.asciify(text)).yellow
+      puts a.asciify(text).yellow
     end
   end
 end

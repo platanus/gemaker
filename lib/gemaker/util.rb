@@ -66,12 +66,12 @@ module Gemaker
     end
 
     def info(string)
-      puts ColorizedString.new(string).green
+      puts string.to_s.green
     end
 
     def error(string)
       return if string.blank?
-      puts ColorizedString.new(string).red
+      puts string.to_s.red
     end
   end
 end

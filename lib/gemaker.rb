@@ -1,6 +1,6 @@
 require "power-types"
 require "active_support/all"
-require "colorized_string"
+require "colorize"
 require "artii"
 
 require "gemaker/version"
