@@ -26,12 +26,15 @@ module Gemaker
       puts "Can't delete because #{full_path} does not exist"
     end
 
-    def execute(cmd)
-      `#{cmd}`
+    def execute(cmd, error_message = nil)
+      system cmd
+      error(error_message) if $?.exitstatus != 0
     end
 
-    def execute_in_gem(cmd)
-      `cd #{gem_root_path}; #{cmd}; cd ..`
+    def execute_in_gem(cmd, error_message = nil)
+      system "cd #{gem_root_path}; #{cmd}"
+      error(error_message) if $?.exitstatus != 0
+      system "cd .."
     end
 
     def create_dir(path)
@@ -64,6 +67,11 @@ module Gemaker
 
     def info(string)
       puts ColorizedString.new(string).green
+    end
+
+    def error(string)
+      return if string.blank?
+      puts ColorizedString.new(string).red
     end
   end
 end

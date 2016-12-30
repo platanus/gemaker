@@ -20,6 +20,7 @@ require "gemaker/commands/customize_engine"
 require "gemaker/commands/customize_rakefile"
 require "gemaker/commands/customize_main_lib_file"
 require "gemaker/commands/add_install_generator"
+require "gemaker/commands/add_hound_rules"
 
 module Gemaker
 end

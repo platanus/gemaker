@@ -27,6 +27,7 @@ module Gemaker
         Gemaker::Cmd::CustomizeMainLibFile.for(config: @config)
         Gemaker::Cmd::AddInstallGenerator.for(config: @config)
         Gemaker::Cmd::ConfigureGit.for(config: @config)
+        Gemaker::Cmd::AddHoundRules.for(config: @config)
         info("Done!")
       end
     end
