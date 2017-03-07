@@ -1,5 +1,13 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
 before_install: gem install bundler -v 1.12.5
+deploy:
+  provider: rubygems
+  api_key:
+    secure: Ro/gJ2W3xBfeaqQPhZY4uud7VIDlJrDqtpaweHLlTgCxBBhNhZGD0VO65cL3Ay+nHvyhojuLrn/GFYRm0kAmqK95i5B0xERsakp5BQ51Wv+mcxv7ki9t3wiY0JOmmNUdXAChMgnpehGXqDnCfQ8RXauKmuCHO5z2+cR+ZcrkKDzJiSOlvksoFDtDcqiQ9XBRO8glVlg91gyRVFCJOYBgVPx3a+cdK9Ym3Mc0/cn1HUAOsSHG8+GeP4Njp6P8oOVQZu/3OLChYk7nkW9oqyKV8PX02cdd+3RCAilgSZQ18v0N/+FrXnOeudZcuNKlWhkg+Aw71WQv2fHvjgH2pD8gX2K13Yxkw3/C5BLoMrW1EbZjfgYC7nKEQYsBjjIjpeMsB8lNrEIQUiIN6Oz+lxzs/TVXOmHvMNd7TsrY2WS0JhuIsjtLmsotJrqzWp+VOblXoJ0i5ItkYo2mYiRMmpLp1fH10TG1c/W2X9ocwBhhYiLrqLLhyqzR1mYMWlSR0bETfRqBLcIzzzZtmi9vPjftXPHdWCdElssA9oRvc21zNuFQ5fxk0huXsJdlNlvxo+90dquN2o/l884WBoPfuyHTVlnnwVtWRhRSvI6ArlUijO/PbZROi6bK0fLockDix493e6u/nnSjx32WM7vWv4P7eNlhdItasNtN07H1MuT3KvA=
+  gem: gemaker
+  on:
+    tags: true
+    repo: platanus/gemaker
