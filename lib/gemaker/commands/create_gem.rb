@@ -3,9 +3,16 @@ module Gemaker
     class CreateGem < Gemaker::Cmd::Base
       def in_engine_context
         mountable_opt = "--mountable" if @config.mountable?
-        create_customized_gem(
-          "rails plugin new #{@config.gem_name} -T #{mountable_opt} --dummy-path=spec/dummy"
-        )
+
+        commands = [
+          "echo \"source 'https://rubygems.org'\" > GemakerGemfile",
+          "echo \"gem 'rails', '~> #{Gemaker::RAILS_VERSION}'\" > GemakerGemfile",
+          "BUNDLE_GEMFILE=GemakerGemfile bundle install",
+          "BUNDLE_GEMFILE=GemakerGemfile bundle exec rails plugin new #{@config.gem_name} -T #{mountable_opt} --dummy-path=spec/dummy", # rubocop:disable Metrics/LineLength
+          "rm -f GemakerGemfile GemakerGemfile.lock"
+        ]
+
+        create_customized_gem(commands.join('; '))
       end
 
       def in_normal_context
@@ -14,6 +21,7 @@ module Gemaker
 
       private
 
+      # rubocop:disable Metrics/MethodLength
       def create_customized_gem(cmd)
         execute(cmd)
         Gemaker::Cmd::AddReadme.for(config: @config)
@@ -28,6 +36,7 @@ module Gemaker
         Gemaker::Cmd::CustomizeMainLibFile.for(config: @config)
         Gemaker::Cmd::AddInstallGenerator.for(config: @config)
         Gemaker::Cmd::AddHoundRules.for(config: @config)
+        Gemaker::Cmd::ConfigureTravis.for(config: @config)
         Gemaker::Cmd::ConfigureGit.for(config: @config)
         info("Done!")
       end

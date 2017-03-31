@@ -34,14 +34,17 @@ module Gemaker
       end
 
       config.human_gem_name = ask(
-        "Enter the human readable version of the name. e.g. \"#{config.human_gem_name}\":")
+        "Enter the human readable version of the name. e.g. \"#{config.human_gem_name}\":"
+      )
       config.summary = ask("Enter gem's summary: ")
       config.description = ask("Enter gem's description: ")
       config.homepage = ask(
-        "Enter gem's homepage. e.g. https://github.com/platanus/#{config.gem_name}: ")
+        "Enter gem's homepage. e.g. https://github.com/platanus/#{config.gem_name}: "
+      )
       config.authors = ask("Enter gem's authors. e.g. Sherlock Holmes,James Moriarty: ")
       config.emails = ask(
-        "Enter the authors' emails. e.g. sherlock@platan.us,james@platan.us: ")
+        "Enter the authors' emails. e.g. sherlock@platan.us,james@platan.us: "
+      )
       config.engine = agree("Is the gem a Rails engine?")
 
       if config.engine?
