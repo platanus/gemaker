@@ -21,6 +21,7 @@ module Gemaker
 
       private
 
+      # rubocop:disable Metrics/MethodLength
       def create_customized_gem(cmd)
         execute(cmd)
         Gemaker::Cmd::AddReadme.for(config: @config)
@@ -35,6 +36,7 @@ module Gemaker
         Gemaker::Cmd::CustomizeMainLibFile.for(config: @config)
         Gemaker::Cmd::AddInstallGenerator.for(config: @config)
         Gemaker::Cmd::AddHoundRules.for(config: @config)
+        Gemaker::Cmd::ConfigureTravis.for(config: @config)
         Gemaker::Cmd::ConfigureGit.for(config: @config)
         info("Done!")
       end
