@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ##### Added
 
 * Replace factory_girl with factory_bot.
+* Generate engines with Rails 5.
 
 ### v0.4.0
 
