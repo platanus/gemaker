@@ -80,8 +80,9 @@ jobs:
       - run:
           name: Publish to rubygems
           command: |
-            gem build gemaker.gemspec
-            gem push "gemaker-$(git describe --tags).gem"
+            GEM_FILE_NAME="gemaker-$(git describe --tags).gem"
+            gem build gemaker.gemspec -o $GEM_FILE_NAME
+            gem push $GEM_FILE_NAME
 
 workflows:
   version: 2
@@ -95,8 +96,6 @@ workflows:
               ruby-version: ["2.5", "2.6", "2.7"]
       - deploy:
           context: org-global
-          requires:
-            - test
           filters:
             tags:
               only: /.*/
