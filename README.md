@@ -28,6 +28,16 @@ gemaker new my_gem
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+## Publishing
+
+On master/main branch...
+
+1. Change `VERSION` in `lib/gemaker/version.rb`.
+2. Change `Unreleased` title to current version in `CHANGELOG.md`.
+3. Commit new release. For example: `Releasing v0.1.0`.
+4. Create tag. For example: `git tag v0.1.0`.
+5. Push tag. For example: `git push origin v0.1.0`.
+
 ## Credits
 
 Thank you [contributors](https://github.com/platanus/gemaker/graphs/contributors)!
