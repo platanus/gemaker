@@ -1,4 +1,9 @@
-# Gemaker [![Gem Version](https://badge.fury.io/rb/gemaker.svg)](https://badge.fury.io/rb/gemaker) [![Build Status](https://travis-ci.org/platanus/gemaker.svg?branch=master)](https://travis-ci.org/platanus/gemaker) [![Coverage Status](https://coveralls.io/repos/github/platanus/gemaker/badge.svg)](https://coveralls.io/github/platanus/gemaker)
+# Gemaker
+
+[![Gem Version](https://badge.fury.io/rb/gemaker.svg)](https://badge.fury.io/rb/gemaker)
+[![CircleCI](https://circleci.com/gh/platanus/gemaker.svg?style=shield)](https://app.circleci.com/pipelines/github/platanus/gemaker)
+[![Coverage Status](https://coveralls.io/repos/github/platanus/gemaker/badge.svg)](https://coveralls.io/github/platanus/gemaker)
+
 Ruby CLI created to build Platanus' gems.
 
 ## Installation
