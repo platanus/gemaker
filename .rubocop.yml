@@ -468,12 +468,6 @@ Style/WhileUntilModifier:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#while-as-a-modifier
   Enabled: false
   MaxLineLength: 80
-Style/WordArray:
-  Description: Use %w or %W for arrays of words.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-w
-  Enabled: false
-  MinSize: 0
-  WordRegex: !ruby/regexp /\A[\p{Word}]+\z/
 Metrics/AbcSize:
   Description: A calculated magnitude based on number of assignments, branches, and
     conditions.
