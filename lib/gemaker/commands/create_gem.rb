@@ -2,13 +2,11 @@ module Gemaker
   module Cmd
     class CreateGem < Gemaker::Cmd::Base
       def in_engine_context
-        mountable_opt = "--mountable" if @config.mountable?
-
         commands = [
           "echo \"source 'https://rubygems.org'\" > GemakerGemfile",
           "echo \"gem 'rails', '~> #{Gemaker::RAILS_VERSION}'\" > GemakerGemfile",
           "BUNDLE_GEMFILE=GemakerGemfile bundle install",
-          "BUNDLE_GEMFILE=GemakerGemfile bundle exec rails plugin new #{@config.gem_name} -T #{mountable_opt} --dummy-path=spec/dummy", # rubocop:disable Metrics/LineLength
+          "BUNDLE_GEMFILE=GemakerGemfile bundle exec rails plugin new #{@config.gem_name} -T --mountable --dummy-path=spec/dummy", # rubocop:disable Metrics/LineLength
           "rm -f GemakerGemfile GemakerGemfile.lock"
         ]
 

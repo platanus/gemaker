@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Replace travis with Circle CI.
 - Generate dummy app with Rails 6.
 - Use Review Dog instead of Hound.
+- Always create mountable engines.
 
 ### v0.1.0
 

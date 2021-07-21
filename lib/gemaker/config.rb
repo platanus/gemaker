@@ -2,7 +2,7 @@ module Gemaker
   class Config
     RUBY_VERSION = 2.3
 
-    attr_accessor :gem_name, :summary, :engine, :cli, :mountable, :installable
+    attr_accessor :gem_name, :summary, :engine, :cli, :installable
     attr_reader :authors, :emails
     attr_writer :human_gem_name, :description, :homepage
 
@@ -43,10 +43,6 @@ module Gemaker
 
     def cli?
       !!cli
-    end
-
-    def mountable?
-      !!mountable
     end
 
     def installable?

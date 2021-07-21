@@ -48,7 +48,6 @@ module Gemaker
       config.engine = agree("Is the gem a Rails engine?")
 
       if config.engine?
-        config.mountable = agree("Is the engine mountable?")
         config.installable = agree("Need an installer?")
       else
         config.cli = agree("Is it a CLI (Command-line interface)?")
