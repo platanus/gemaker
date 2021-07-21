@@ -53,10 +53,6 @@ module Gemaker
       !!installable
     end
 
-    def ruby_version
-      RUBY_VERSION
-    end
-
     private
 
     def string_to_array(value)

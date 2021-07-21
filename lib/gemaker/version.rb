@@ -1,4 +1,9 @@
 module Gemaker
   VERSION = "0.6.0"
-  RAILS_VERSION = "5.1.5"
+  BUNDLER_VERSION = "2.2.15"
+  RAILS_VERSION = "6.0"
+  MIN_RAILS_VERSION = "6.0"
+  RUBY_VERSIONS = ["2.5", "2.6", "2.7"]
+  RUBY_VERSION = RUBY_VERSIONS.last
+  RUBOCOP_VERSION = "1.9"
 end

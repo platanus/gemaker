@@ -21,10 +21,13 @@ Gem::Specification.new do |spec|
 <% if config.cli? -%>
   <%= "spec.add_dependency \"commander\", \"~> 4.4\", \">= 4.4.0\"" %>
 <% end -%>
-  spec.add_development_dependency "bundler", "~> 1.12"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.4"
-  spec.add_development_dependency "guard-rspec", "~> 4.7"
-  spec.add_development_dependency "pry"
+  spec.add_development_dependency "bundler", "~> <%= Gemaker::BUNDLER_VERSION %>"
   spec.add_development_dependency "coveralls"
+  spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec_junit_formatter"
+  spec.add_development_dependency "rubocop", "~> <%= Gemaker::RUBOCOP_VERSION %>"
+  spec.add_development_dependency "rubocop-rails"
+  spec.add_development_dependency "pry"
 end

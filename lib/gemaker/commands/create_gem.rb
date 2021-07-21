@@ -35,8 +35,7 @@ module Gemaker
         Gemaker::Cmd::CustomizeRakefile.for(config: @config)
         Gemaker::Cmd::CustomizeMainLibFile.for(config: @config)
         Gemaker::Cmd::AddInstallGenerator.for(config: @config)
-        Gemaker::Cmd::AddHoundRules.for(config: @config)
-        Gemaker::Cmd::ConfigureTravis.for(config: @config)
+        Gemaker::Cmd::ConfigureContinuousIntegration.for(config: @config)
         Gemaker::Cmd::ConfigureGit.for(config: @config)
         info("Done!")
       end
