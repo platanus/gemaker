@@ -19,7 +19,6 @@ module Gemaker
 
       private
 
-      # rubocop:disable Metrics/MethodLength
       def create_customized_gem(cmd)
         execute(cmd)
         Gemaker::Cmd::AddReadme.for(config: @config)

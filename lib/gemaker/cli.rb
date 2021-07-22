@@ -25,7 +25,7 @@ module Gemaker
       end
     end
 
-    # rubocop:disable Metrics/MethodLength
+    # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     def fill_config(gem_name, config)
       config.gem_name = gem_name
 
@@ -53,7 +53,7 @@ module Gemaker
         config.cli = agree("Is it a CLI (Command-line interface)?")
       end
     end
-    # rubocop:enable Metrics/MethodLength
+    # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
     def draw_artii(text)
       a = Artii::Base.new font: 'slant'

@@ -5,7 +5,7 @@ module Gemaker
     end
 
     def copy_template(source, destination, locales = {})
-      template_path = get_template_path(source) + ".erb"
+      template_path = "#{get_template_path(source)}.erb"
       destination_path = get_destination_path(destination)
 
       input = File.open(template_path)
@@ -62,7 +62,7 @@ module Gemaker
     def parse_erb(content, data)
       b = binding
       data.each { |k, v| singleton_class.send(:define_method, k) { v } }
-      ERB.new(content, nil, "-").result(b)
+      ERB.new(content, trim_mode: '-').result(b)
     end
 
     def info(string)
@@ -71,6 +71,7 @@ module Gemaker
 
     def error(string)
       return if string.blank?
+
       puts string.to_s.red
     end
   end
