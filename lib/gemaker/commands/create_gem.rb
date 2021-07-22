@@ -23,6 +23,7 @@ module Gemaker
         execute(cmd)
         Gemaker::Cmd::AddReadme.for(config: @config)
         Gemaker::Cmd::AddChangelog.for(config: @config)
+        Gemaker::Cmd::ConfigureEditorConfig.for(config: @config)
         Gemaker::Cmd::CustomizeGemspec.for(config: @config)
         Gemaker::Cmd::AddLicense.for(config: @config)
         Gemaker::Cmd::AddCliStructure.for(config: @config)
