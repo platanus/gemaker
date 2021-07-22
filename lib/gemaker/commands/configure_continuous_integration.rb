@@ -15,7 +15,7 @@ module Gemaker
         copy_template("#{tpl_dir}/rubocop.yml", ".rubocop.yml", config: @config)
         create_dir(".circleci")
         copy_template("circle_config.yml", ".circleci/config.yml", config: @config)
-        copy_file("circleci-setup-script.sh", ".circleci/setup-rubygems.yml")
+        copy_file("circleci-setup-script.sh", ".circleci/setup-rubygems.sh")
         info "Configure CricleCI"
       end
     end

@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### Unreleased
+##### Changed
+
+- Generate gems with Circle CI instead of Travis.
+- Generate dummy app with Rails 6.
+- Use Review Dog instead of Hound.
+- Always create mountable engines.
+- Move specs out of dummy app.
+
 ### 0.6.0
 
 ##### Changed
