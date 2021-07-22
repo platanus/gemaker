@@ -5,7 +5,6 @@ class <%= config.gem_class %>::InstallGenerator < Rails::Generators::Base
     template "initializer.rb", "config/initializers/<%= config.gem_name %>.rb"
   end
 
-<% if config.mountable? -%>
   def mount_routes
     line = "Rails.application.routes.draw do\n"
     inject_into_file "config/routes.rb", after: line do <<-"HERE".gsub(/^ {4}/, '')
@@ -13,7 +12,6 @@ class <%= config.gem_class %>::InstallGenerator < Rails::Generators::Base
     HERE
     end
   end
-<% end -%>
 
   def copy_engine_migrations
     rake "railties:install:migrations"

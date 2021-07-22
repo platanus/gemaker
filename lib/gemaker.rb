@@ -10,6 +10,7 @@ require "gemaker/commands/base"
 require "gemaker/commands/create_gem"
 require "gemaker/commands/add_readme"
 require "gemaker/commands/add_changelog"
+require "gemaker/commands/configure_editor_config"
 require "gemaker/commands/customize_gemspec"
 require "gemaker/commands/add_license"
 require "gemaker/commands/add_cli_structure"
@@ -20,8 +21,7 @@ require "gemaker/commands/customize_engine"
 require "gemaker/commands/customize_rakefile"
 require "gemaker/commands/customize_main_lib_file"
 require "gemaker/commands/add_install_generator"
-require "gemaker/commands/add_hound_rules"
-require "gemaker/commands/configure_travis"
+require "gemaker/commands/configure_continuous_integration"
 
 module Gemaker
 end

@@ -3,7 +3,7 @@ AllCops:
   - "vendor/**/*"
   - "db/**/*"
   - "bin/**/*"
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: <%= Gemaker::RUBY_VERSION %>
 Layout/ParameterAlignment:
   Description: Align the parameters of a method call if they span more than one line.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-double-indent

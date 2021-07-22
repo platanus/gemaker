@@ -1,9 +1,13 @@
+require:
+  - rubocop-rails
 AllCops:
   Exclude:
   - "vendor/**/*"
   - "db/**/*"
   - "bin/**/*"
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: <%= Gemaker::RUBY_VERSION %>
+Rails:
+  Enabled: true
 Layout/ParameterAlignment:
   Description: Align the parameters of a method call if they span more than one line.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-double-indent
@@ -481,6 +485,9 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Description: Disallow overriding the `Struct` built-in methods via `Struct.new`.
   Enabled: true
+Rails/Delegate:
+  Description: Prefer delegate method for delegations.
+  Enabled: false
 Style/OptionalBooleanParameter:
   Description: 'Use keyword arguments when defining method with boolean argument.'
   Enabled: false
