@@ -1,5 +1,5 @@
 module Gemaker
-  VERSION = "0.6.0"
+  VERSION = "1.0.0"
   BUNDLER_VERSION = "2.2.15"
   RAILS_VERSION = "6.0"
   MIN_RAILS_VERSION = "6.0"
